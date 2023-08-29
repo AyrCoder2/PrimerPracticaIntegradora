@@ -18,7 +18,8 @@ router.get("/carts",async(req,res)=>{
 })
 
 router.get("/carts/:cid",async(req,res)=>{
-    const carritofound=await cm.getCartbyId(req.params)
+   const { cid } =  req.params;
+    const carritofound=await cm.getCartById(cid);
     res.json({status:"success",carritofound})
 })
 
