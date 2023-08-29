@@ -29,7 +29,8 @@ router.get("/products",async(req,res)=>{
 
 
 router.get("/products/:pid", async (req, res) => {
-    const productfind = await manager.getProductbyId(req.params);
+  const { pid } =  req.params;
+    const productfind = await manager.getProductById(pid);
     res.json({ status: "success", productfind });
   });
 
